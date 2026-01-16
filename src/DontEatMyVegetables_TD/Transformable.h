@@ -5,6 +5,7 @@
 
 class Transformable
 {
+protected:
 	Vector2f m_pos;
 
 public:
