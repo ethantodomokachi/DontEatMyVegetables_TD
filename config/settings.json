@@ -1,0 +1,37 @@
+{
+    "projects": {
+      "DontEatMyVegetables_TD": {
+        "additionalDependencies": [
+          "SDL2.lib",
+          "SDL2main.lib",
+          "SDL2_image.lib",
+          "SDL2_ttf.lib",
+          "SDL2_mixer.lib"
+        ],
+        "additionalIncludeDirectories": [
+          "../../lib/SDL2/include",
+          "../../lib/SDL2_image/include",
+          "../../lib/SDL2_ttf/include",
+          "../../lib/SDL2_mixer/include"
+        ],
+        "additionalLibraryDirectories": [
+          "../../lib/SDL2/lib/x64",
+          "../../lib/SDL2_image/lib/x64",
+          "../../lib/SDL2_ttf/lib/x64",
+          "../../lib/SDL2_mixer/lib/x64"
+        ],
+        "dependencies": [],
+        "dependents": [],
+        "guid": "7B4A1C2F-0C2F-7ED4-6EEB-56C1065953F8",
+        "lib": false,
+        "pch": false,
+        "preprocessorDefinitions": [],
+        "vcpkg": false,
+        "window": false
+      }
+    },
+    "solution_guid": "4B6222F5-5A3C-1718-225E-3D2B70545FD6",
+    "solution_name": "DontEatMyVegetables_TD",
+    "startup_project": "DontEatMyVegetables_TD",
+    "version": "1.17.4"
+}
