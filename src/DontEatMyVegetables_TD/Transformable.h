@@ -11,7 +11,7 @@ protected:
 public:
 	Transformable(Vector2f position);
 
-	void SetPosition(Vector2f position);
+	virtual void SetPosition(Vector2f position);
 	Vector2f GetPosition() { return m_pos; }
 };
 

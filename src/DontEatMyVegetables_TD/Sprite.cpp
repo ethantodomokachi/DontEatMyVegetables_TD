@@ -2,7 +2,7 @@
 #include "Sprite.h"
 #include "AssetManager.h"
 
-Sprite::Sprite(SDL_Renderer* r, const char* fp) : Transformable(Vector2f(0, 0))
+Sprite::Sprite(SDL_Renderer* r, const char* fp) : Transformable({ 0, 0 })
 {
 	m_filePath = fp;
 
