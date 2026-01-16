@@ -1,13 +1,16 @@
 #pragma once
 #include "Drawable.h"
 #include "Transformable.h"
+#include <string>
 
 class Sprite : public Drawable, public Transformable
 {
 protected:
     SDL_Texture* m_texture;
-    const char* m_filePath;
+    std::string m_filePath;
 
+    int m_frameX;
+    int m_frameY;
     int m_frameWidth;
     int m_frameHeight;
 
@@ -16,7 +19,7 @@ protected:
     SDL_RendererFlip m_flip;
 
 public:
-    Sprite(SDL_Renderer* r, const char* fp);
+    Sprite(SDL_Renderer* r, std::string fp);
     virtual ~Sprite();
 
     virtual void SetSpriteSheet(int frameWidth, int frameHeight);
@@ -34,6 +37,6 @@ public:
 
     void Draw(SDL_Renderer* renderer) override;
 
-    const char* GetFilePath() { return m_filePath; }
+    std::string GetFilePath() { return m_filePath; }
 };
 

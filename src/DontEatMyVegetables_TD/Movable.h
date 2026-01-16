@@ -13,6 +13,6 @@ public:
 	Movable(float speed, Vector2f dir);
 	virtual void SetDirection(Vector2f dir);
 	virtual void SetSpeed(float speed);
-	virtual void Move() = 0;
+	virtual void Move(float deltaTime) = 0;
 };
 

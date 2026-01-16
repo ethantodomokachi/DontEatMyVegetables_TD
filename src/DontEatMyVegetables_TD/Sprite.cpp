@@ -2,7 +2,7 @@
 #include "Sprite.h"
 #include "AssetManager.h"
 
-Sprite::Sprite(SDL_Renderer* r, const char* fp) : Transformable({ 0, 0 })
+Sprite::Sprite(SDL_Renderer* r, std::string fp) : Transformable({ 0, 0 })
 {
 	m_filePath = fp;
 
@@ -19,6 +19,9 @@ Sprite::Sprite(SDL_Renderer* r, const char* fp) : Transformable({ 0, 0 })
 	m_texture = tData->texture;
 	m_frameWidth = tData->width;
 	m_frameHeight = tData->height;
+
+	m_frameX = 0;
+	m_frameY = 0;
 
 	m_angle = 0.f;
 	m_flip = SDL_FLIP_NONE;
@@ -91,6 +94,7 @@ Sprite::~Sprite()
 void Sprite::Draw(SDL_Renderer* renderer)
 {
 	SDL_Rect dst{ m_pos.GetX(), m_pos.GetY(), m_frameWidth, m_frameHeight};
+	SDL_Rect src{ m_frameX, m_frameY, m_frameWidth, m_frameHeight };
 
 	SDL_Point* center = nullptr;
 	SDL_Point autoCenter;
@@ -105,5 +109,5 @@ void Sprite::Draw(SDL_Renderer* renderer)
 		center = &autoCenter;
 	}
 
-	SDL_RenderCopyEx(renderer, m_texture, nullptr, &dst, m_angle, center, m_flip);
+	SDL_RenderCopyEx(renderer, m_texture, &src, &dst, m_angle, center, m_flip);
 }
